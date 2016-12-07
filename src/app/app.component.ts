@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map'
+import {HomeService} from "./services/home.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [HomeService]
 })
 export class AppComponent {
   title = 'app works!';
 
-  private url = 'http://apis.baidu.com/apistore/idservice/id?id=420984198704207896&apikey=1b4a468e948d9ae30727d19005c71c2f';
-
-  constructor(http: Http) {
-    http.get(this.url)
-      .map(res => res.json())
-      .subscribe(people => this.title = JSON.stringify(people));
+  constructor(homeService: HomeService) {
+    console.log(homeService.getHello());
+    homeService.getHello().subscribe(title => this.title =JSON.stringify(title));
+    console.log(this.title);
   }
 }
