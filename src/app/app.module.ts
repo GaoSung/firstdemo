@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,7 +12,7 @@ import './rxjs-extensions';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', component: AppComponent }
+  { path: 'app', component: AppComponent }
 ];
 
 @NgModule({
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot(),
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

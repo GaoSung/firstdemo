@@ -11,10 +11,8 @@ import {HomeService} from "./services/home.service";
 })
 export class AppComponent {
   title = 'app works!';
+  messages:Array<any> = [{'type':'apple','num':'12'},{'type':'orange','num':'16'},{'type':'banana','num':'19'}];
 
-  constructor(homeService: HomeService) {
-    console.log(homeService.getHello());
-    homeService.getHello().subscribe(title => this.title =JSON.stringify(title));
-    console.log(this.title);
+  constructor() {
   }
 }

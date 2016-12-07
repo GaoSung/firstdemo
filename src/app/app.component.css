@@ -1,0 +1,23 @@
+.my-layout {
+  width: 800px;
+  height: 600px;
+}
+
+.my-layout md-sidenav {
+  max-width: 400px;
+}
+
+.my-layout .md-sidenav-content,
+.my-layout md-sidenav {
+  display: flex;
+}
+
+.my-scrolling-content {
+  overflow: auto;
+}
+
+button.my-fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
