@@ -1,0 +1,46 @@
+
+
+<h1>{{name}}</h1>
+<p><strong>年龄：</strong>{{age}}</p>
+<p><strong>地址：</strong>{{address.street}},{{address.city}},{{address.state}}</p>
+<p><strong>兴趣：</strong></p>
+<ul *ngIf="hobbies">
+  <p>下面是兴趣列表</p>
+  <li *ngFor="let hobby of hobbies;let i=index;">
+    {{hobby}}
+    <button (click)="deleteHobby(i)">X</button>
+  </li>
+  <p>兴趣列表展示完毕</p>
+</ul>
+<form (submit)="addHobby(hobby.value)">
+  <label>添加兴趣：</label>
+  <input type="text" #hobby/><br/>
+</form><br/>
+<form>
+  <input type="text" name="name" [(ngModel)]="name"/><br/>
+  <input type="text" name="age" [(ngModel)]="age"/><br/>
+  <input type="text" name="address.street" [(ngModel)]="address.street"/><br/>
+  <input type="text" name="address.city" [(ngModel)]="address.city"/><br/>
+  <input type="text" name="address.state" [(ngModel)]="address.state"/><br/>
+</form>
+<hr/>
+
+<button md-button>FLAT</button>
+<button md-raised-button>RAISED</button>
+<button md-fab>
+  <md-icon class="md-24">add</md-icon>
+</button>
+<button md-mini-fab>
+  <md-icon class="md-24">add</md-icon>
+</button>
+<hr/>
+
+<button md-raised-button color="primary">PRIMARY</button>
+<button md-raised-button color="accent">ACCENT</button>
+<button md-raised-button color="warn">WARN</button>
+<hr/>
+
+<button md-button disabled>OFF</button>
+<button md-raised-button [disabled]="isDisabled">OFF</button>
+<button md-mini-fab [disabled]="isDisabled"><md-icon>check</md-icon></button>
+

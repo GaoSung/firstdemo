@@ -1,31 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import {Routes, RouterModule} from "@angular/router";
 import './rxjs-extensions';
-
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'app', component: AppComponent }
-];
+import { UserComponent } from './components/user/user.component';
+import { AppRoutingModule }     from './app-routing.module';
+import { NavComponent } from './components/nav/nav.component';
+import { HttpTestComponent } from './components/http-test/http-test.component';
+import { HeavyLoaderComponent } from './components/heavy-loader/heavy-loader.component';
+import { MyUnlessDirective } from './directives/my-unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    UserComponent,
+    NavComponent,
+    HttpTestComponent,
+    HeavyLoaderComponent,
+    MyUnlessDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     NgbModule.forRoot(),
     MaterialModule.forRoot()
   ],
