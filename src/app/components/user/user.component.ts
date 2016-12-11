@@ -10,12 +10,12 @@ import {Address} from "../../interface/address";
 })
 export class UserComponent implements OnInit {
 
-  name:string;
+  @Input() name:string;
   age:number;
   address:Address;
   hobbies:Array<string>;
 
-  @ViewChild('hobby') hobbyInput:ElementRef;
+  //@ViewChild('hobby') hobbyInput:ElementRef;
 
   constructor() {
     this.name='zhangsan';
@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
 
   addHobby(hobby:string){
     this.hobbies.push(hobby);
-    this.hobbyInput.nativeElement.value='';
+    //this.hobbyInput.nativeElement.value='';
   }
 
   deleteHobby(index:number){

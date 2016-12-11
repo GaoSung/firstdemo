@@ -4,13 +4,15 @@ import {UserComponent} from "./components/user/user.component";
 import {NavComponent} from "./components/nav/nav.component";
 import {HttpTestComponent} from "./components/http-test/http-test.component";
 import {HeavyLoaderComponent} from "./components/heavy-loader/heavy-loader.component";
+import {HeroFormComponent} from "./components/hero-form/hero-form.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/nav', pathMatch: 'full' },
   { path: 'nav',component:NavComponent },
   { path: 'http-test',component:HttpTestComponent },
   { path: 'user',component: UserComponent },
-  { path:'heavy-loader',component:HeavyLoaderComponent}
+  { path:'heavy-loader',component:HeavyLoaderComponent},
+  { path:'hero-form',component:HeroFormComponent}
 ];
 
 @NgModule({

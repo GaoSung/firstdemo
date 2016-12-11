@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  private message:string;
+
+  constructor() {
+    this.message = 'nav hhhhhh';
+  }
 
   ngOnInit() {
   }

@@ -1,5 +1,3 @@
-
-
 <h1>{{name}}</h1>
 <p><strong>年龄：</strong>{{age}}</p>
 <p><strong>地址：</strong>{{address.street}},{{address.city}},{{address.state}}</p>
@@ -12,10 +10,15 @@
   </li>
   <p>兴趣列表展示完毕</p>
 </ul>
-<form (submit)="addHobby(hobby.value)">
+<form (submit)="addHobby(hobby.value);hobby.value=''">
   <label>添加兴趣：</label>
-  <input type="text" #hobby/><br/>
+  <!-- 此处添加(keyup)="0"， 只有在应用做了些异步事件（如击键），Angular 才更新绑定（并最终影响到屏幕）。本例代码将keyup事件绑定到了数字0，这是可能是最短的模板语句。
+  虽然这个语句不做什么，但它满足 Angular 的要求，所以 Angular 将更新屏幕。-->
+  <input type="text" #hobby (keyup)="0"/><br/>
+  <h1>==========</h1>
+  <p>{{hobby.value}}</p>
 </form><br/>
+
 <form>
   <input type="text" name="name" [(ngModel)]="name"/><br/>
   <input type="text" name="age" [(ngModel)]="age"/><br/>

@@ -13,6 +13,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HttpTestComponent } from './components/http-test/http-test.component';
 import { HeavyLoaderComponent } from './components/heavy-loader/heavy-loader.component';
 import { MyUnlessDirective } from './directives/my-unless.directive';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyUnlessDirective } from './directives/my-unless.directive';
     NavComponent,
     HttpTestComponent,
     HeavyLoaderComponent,
-    MyUnlessDirective
+    MyUnlessDirective,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,
